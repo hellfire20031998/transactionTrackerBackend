@@ -1,11 +1,8 @@
-import mongoose from "mongoose";
-import PaymentType from "../models/transcationType.js";
 import ExpenseType from "../models/expenseType.js";
 
-
-const getPaymentType= async (req,res)=>{
+const getExpenseType= async (req,res)=>{
     try {
-        const transactions = await PaymentType.find();
+        const transactions = await ExpenseType.find();
         
         res.status(200).json(transactions);
     } catch (err) {
@@ -17,5 +14,4 @@ const getPaymentType= async (req,res)=>{
 
 
 
-export default getPaymentType
-
+export default getExpenseType

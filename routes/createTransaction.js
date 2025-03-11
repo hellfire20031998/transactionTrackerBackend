@@ -1,13 +1,15 @@
 import express from 'express';
 import Transaction from '../models/transaction.js'; // Adjust path based on your folder structure
+import sampleTransactions from './sample.js';
 
 
 const createTransaction = async (req,res)=>{
-    const { userName, userEmail, transactionId, amount, method, date, description } = req.body;
+    const { userName, userEmail, transactionId, amount, method, expenseType, date, description } = req.body;
 
-    if (!userName || !userEmail || !transactionId || !amount || !method || !date || !description) {
+    if (!userName || !userEmail || !transactionId || !amount || !method || !date || !description || !expenseType) {
         return res.status(400).json({ message: 'All fields are required' });
     }
+    
 
     try {
         const newTransaction = new Transaction({
@@ -16,6 +18,7 @@ const createTransaction = async (req,res)=>{
             transactionId,
             amount,
             method,
+            expenseType,
             date,
             description
         });

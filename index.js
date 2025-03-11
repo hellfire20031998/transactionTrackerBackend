@@ -9,6 +9,11 @@ import deleteTransById from './routes/deleteTransaction.js';
 import getPaymentType from './routes/getPaymentType.js'
 import getTransactionsByMonth from './routes/getTransactionsByMonth.js'
 import getAllPaymentByType from './routes/getPaymentByType.js';
+import getExpenseType from './routes/getExpenseType.js';
+import createBudget from './routes/setMonthlyBugdet.js';
+import getMonthlyBudget from './routes/getMonthlyBudget.js'
+import deleteBudgetById from './routes/deleteBudgetById.js'
+import compareBudget from './routes/compareBudget.js';
 
 
 
@@ -36,6 +41,11 @@ app.delete('/delete/:id',deleteTransById)
 app.get('/type',getPaymentType);
 app.get('/month',getTransactionsByMonth);
 app.get('/getAllPaymentByType',getAllPaymentByType);
+app.get('/expenseType',getExpenseType);
+app.post('/createBudget',createBudget)
+app.get('/getBudget',getMonthlyBudget)
+app.delete('/deleteBudget/:id',deleteBudgetById);
+app.post('/compare',compareBudget)
 
 
 

@@ -24,8 +24,13 @@ const transactionSchema = new mongoose.Schema({
     },
     method: {
         type: String,
-        enum: ['Credit Card', 'Debit Card', 'PayPal', 'Bank Transfer', 'Cash'],
+        enum: ['Credit Card', 'Debit Card', 'PayPal', 'Bank Transfer', 'Cash','Net Banking'],
         required: true
+    },
+    expenseType:{
+        type:String,
+        enum: ['Food', 'Travel', 'Enterainment', 'Utilities', 'Others','Education','Shopping','Healthcare'],
+        required:true
     },
     date: {
         type: Date,

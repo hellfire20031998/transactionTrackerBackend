@@ -1,12 +1,9 @@
 import express from 'express';
 import Transaction from '../models/transaction.js'; // Adjust path based on your folder structure
 
-
-
-const getAllTransactions = async (req, res)=>{
+const getAllTransactions = async (req, res) => {
     try {
-        const transactions = await Transaction.find();
-        
+        const transactions = await Transaction.find().sort({ updatedAt: -1 }); // Sorting by most recently updated entries
         res.status(200).json(transactions);
     } catch (err) {
         console.error('Error fetching transactions:', err);
