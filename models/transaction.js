@@ -29,7 +29,7 @@ const transactionSchema = new mongoose.Schema({
     },
     expenseType:{
         type:String,
-        enum: ['Food', 'Travel', 'Enterainment', 'Utilities', 'Others','Education','Shopping','Healthcare'],
+        enum: ['Food', 'Travel', 'Entertainment', 'Utilities', 'Others','Education','Shopping','Healthcare'],
         required:true
     },
     date: {

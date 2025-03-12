@@ -14,6 +14,12 @@ import createBudget from './routes/setMonthlyBugdet.js';
 import getMonthlyBudget from './routes/getMonthlyBudget.js'
 import deleteBudgetById from './routes/deleteBudgetById.js'
 import compareBudget from './routes/compareBudget.js';
+import dotenv from 'dotenv';
+dotenv.config()
+const PORT = process.env.PORT || 8085;
+// console.log('All ENV:', process.env); // Debugging to see all env variables
+
+
 
 
 
@@ -54,8 +60,9 @@ app.post('/compare',compareBudget)
 
 
 
-app.listen(8081, () => {
-    console.log('Server is listening on port 8081');
+
+app.listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`);
 });
 
 startServer();

@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
-
-
-const monUri="mongodb+srv://tonu8707:gVvIQGzLaMP6jbkF@trackercluster.tyksg.mongodb.net/?retryWrites=true&w=majority&appName=trackerCluster"
+import dotenv from 'dotenv'
+dotenv.config()
+const monUri=process.env.MONGOOSE_KEY
 
 // Connect to MongoDB Atlas
 const connectDB = async () => {
